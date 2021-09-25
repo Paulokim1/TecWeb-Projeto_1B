@@ -1,0 +1,44 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="appbar">
+    <img src="{% static 'notes/img/logo-getit.png' %}" class = 'logo'/>
+    <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+    <form method = 'get' action="viewTagList">
+      <button type="submit" class="tags-btn">Tags</button>>
+    </form>>  
+</div>
+
+<main class="container">
+    <form method = 'post' class="form-card", action="add">
+        {% csrf_token %}
+      <input
+        class="form-card-title"
+        type="text"
+        id = 'titulo'
+        name="titulo"
+        placeholder="Título"
+      />
+      <input
+        class="form-card-title"
+        type="text"
+        id = 'tag'
+        name="tag"
+        placeholder="Tag"
+      />
+      <textarea
+        class="autoresize"
+        id = 'detalhes'
+        name="detalhes"
+        placeholder="Digite o conteúdo..."
+      ></textarea>
+      <button class="btn" type="submit">Criar</button>
+    </form>
+
+    <div class="card-container">
+        {% block card %} {% endblock %}
+    </div>
+  </main>
+  <script type="text/javascript" src="{% static 'notes/script/getit.js' %}"></script>
+  {% endblock %}

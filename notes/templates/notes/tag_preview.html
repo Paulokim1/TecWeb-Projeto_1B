@@ -1,0 +1,21 @@
+{% extends "notes/tagListPage.html" %}
+{% load static %}
+
+{% block card %}
+
+{% for tag in tags %}
+<div class="card">
+    <div class="card-body">
+      <!-- Aqui esta o body do card mais a responsabilidade em realizar o UPDATE -->
+      <form method = 'get' class = 'update' action="viewTags">
+        {% csrf_token %}
+        <input type="hidden" name="id" value= "{{tag.id}}"/>
+        <textarea name='tag' class="card-title">{{tag.tag}}</textarea>
+        <button class="delete-btn" type="submit">
+          <img src="{% static 'notes/img/forward.png' %}" class="forward-btn-image"/>
+        </button>
+      </form> 
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

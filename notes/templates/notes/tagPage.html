@@ -1,0 +1,16 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="appbar">
+    <img src="{% static 'notes/img/logo-getit.png' %}" class = 'logo'/>
+    <span class="subtitle">Como o Post-it, mas com outro verbo</span>  
+</div>
+
+<main class="container">
+    <div class="card-container">
+        {% block card %} {% endblock %}
+    </div>
+  </main>
+  <script type="text/javascript" src="{% static 'notes/script/getit.js' %}"></script>
+  {% endblock %}

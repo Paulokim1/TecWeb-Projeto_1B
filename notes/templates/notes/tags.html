@@ -1,0 +1,20 @@
+{% extends "notes/tagPage.html" %}
+{% load static %}
+
+{% block card %}
+
+{% for note in notes %}
+<div class="card">
+    <div class="card-body">
+      <!-- Aqui esta o body do card mais a responsabilidade em realizar o UPDATE -->
+      <form class = 'update'>
+        {% csrf_token %}
+        <input type="hidden" name="id" value= "{{note.id}}"/>
+        <textarea name='titulo' class="card-title">{{note.title}}</textarea>
+        <textarea name='detalhes' class="card-content">{{note.content}}</textarea>
+        <textarea name='tag' class="card-tag">{{note.tag}}</textarea>
+      </form> 
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

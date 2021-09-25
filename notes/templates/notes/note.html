@@ -1,0 +1,32 @@
+{% extends "notes/index.html" %}
+{% load static %}
+
+{% block card %}
+
+{% for note in notes %}
+<div class="card">
+    <div class="card-body">
+      <!-- Aqui esta o body do card mais a responsabilidade em realizar o UPDATE -->
+      <form method = 'post' class = 'update' action="update">
+        {% csrf_token %}
+        <input type="hidden" name="id" value= "{{note.id}}"/>
+        <textarea name='titulo' class="card-title">{{note.title}}</textarea>
+        <textarea name='detalhes' class="card-content">{{note.content}}</textarea>
+        <textarea name='tag' class="card-tag">{{note.tag}}</textarea>
+        <button class="update-btn" type="submit">
+          <img src="{% static 'notes/img/edit.png' %}" class="update-btn-image"/>
+        </button>
+      </form> 
+
+      <!-- Essa parte esta responsavel em realizar o DELETE -->
+      <form method = "post" class="delete" action="delete">
+        {% csrf_token %}
+        <input type="hidden" name="id" value= "{{note.id}}"/>
+        <button class="delete-btn" type="submit">
+          <img src="{% static 'notes/img/delete-sign.png' %}" class="delete-btn-image"/>
+        </button>
+      </form>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
