@@ -1,4 +1,4 @@
-#!C:\Users\82104\Google Drive\DriveDesktop\Insper\4 Semestre\TecWeb\Aulas\Aula 4\env\Scripts\python.exe
+#!C:\Users\82104\Google Drive\DriveDesktop\Insper\4 Semestre\TecWeb\Projetos\TecWeb-Projeto_1B\env\Scripts\python.exe
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

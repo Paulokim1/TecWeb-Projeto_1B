@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\82104\Google Drive\DriveDesktop\Insper\4 Semestre\TecWeb\Aulas\Aula 4\env
+set VIRTUAL_ENV=C:\Users\82104\Google Drive\DriveDesktop\Insper\4 Semestre\TecWeb\Projetos\TecWeb-Projeto_1B\env
 
 if not defined PROMPT set PROMPT=$P$G
 
